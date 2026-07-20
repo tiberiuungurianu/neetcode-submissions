@@ -1,0 +1,28 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int poz_i = 0;
+        int beg_i = 0;
+        int left = nums[0];
+        int [] rez = new int [2];
+        int right = nums.length;
+        int found = 0;
+        int end_i = right;
+        for ( int i = 1 ; i<= right && found == 0; i++, left = nums[beg_i])
+        {
+            if ( target == left + nums[i])
+            {
+                found = 1;
+                end_i = i;
+            }
+            else if( i == right)
+            { 
+                beg_i++;
+            }
+        }
+
+        rez[0] = beg_i; 
+        rez[1] = end_i;
+
+        return rez;
+    }
+}
